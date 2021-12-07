@@ -4,14 +4,16 @@ using EFDataApp.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace WebCalculator1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20211207062251_NonId")]
+    partial class NonId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,9 +23,8 @@ namespace WebCalculator1.Migrations
 
             modelBuilder.Entity("EFDataApp.Models.Operation", b =>
                 {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double>("Result")
+                        .HasColumnType("float");
 
                     b.Property<string>("Browser")
                         .HasColumnType("nvarchar(max)");
@@ -40,10 +41,7 @@ namespace WebCalculator1.Migrations
                     b.Property<string>("IP")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Result")
-                        .HasColumnType("float");
-
-                    b.HasKey("ID");
+                    b.HasKey("Result");
 
                     b.ToTable("Operations");
                 });
