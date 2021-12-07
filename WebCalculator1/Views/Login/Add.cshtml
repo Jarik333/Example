@@ -1,8 +1,10 @@
 ﻿@model EFDataApp.Models.Operation
 @{
     ViewBag.Title = "Добавление операции";
+   
 }
-<form asp-action="add" asp-controller="home">
+<h2>Добавление строки вычисений вручную</h2>
+<form asp-action="add" asp-controller="login">
     <div class="form-group">
         <label asp-for="Expression" class="control-label"> Выражение</label>
         <input type="text" asp-for="Expression" class="form-control" />
@@ -28,6 +30,6 @@
         <input type="text" asp-for="Error" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Добавить" class="btn btn-default" />
+        <input type="submit" value="Добавить" class="alert-success" />
     </div>
 </form>
