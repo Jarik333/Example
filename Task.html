@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <button type="submit" id="submit" onclick="alerted();">Сообщение</button>
+  <form name="my">
+    <input name="value" id = "input1">
+  </form>
+  <button type="submit" onclick="log();">Сохранить </button>
+  <button type="submit" onclick="hideForm();">Скрыть форму </button>
+  <button type="submit" onclick="showForm();">Показать форму </button>
+  <p id="text"><p>
+  <button type="submit" onclick="text();">Показать текст </button>
+  <button type="submit" onclick="deleteText();">Удалить текст </button>
+  
+   <script>
+    let message = "Текст появился";
+    alert( "Страница загрузилась!" );
+    console.log("Страница загрузилась");
+    function alerted(){
+       alert("Вы нажали на кнопку");
+       console.log("Вы нажали на кнопку");
+    }
+     let form = document.querySelector("form"); 
+     function log(){
+       console.log(form.elements.value.value);
+    }
+     function text(){
+      let message = "Текст появился";
+      document.getElementById("text").innerHTML = message;
+      
+    }
+    function deleteText(){
+       let message = "";
+       document.getElementById("text").innerHTML = message;
+       
+    }
+    function hideForm(){
+      
+     document.getElementById("input1").style.visibility = "hidden";
+       
+    }
+     function showForm(){
+      
+     document.getElementById("input1").style.visibility = "visible";
+       
+    }
+  </script>
+</body>
+</html>
